@@ -15,6 +15,6 @@ jobs:
           else
             echo "ENV_NAME=staging" >> $GITHUB_ENV
           fi
-      # SRE Note: Em um ambiente real, aqui conectariamos no GKE (google-github-actions/auth)
+      # Num ambiente real, aqui conectariamos no GKE (google-github-actions/auth)
       # e executariamos o comando:
       # helm upgrade --install api-${{ env.ENV_NAME }} ./helm/crypto-app --set environment=${{ env.ENV_NAME }}
