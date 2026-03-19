@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-crypto-app
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: crypto-app
+  template:
+    metadata:
+      labels:
+        app: crypto-app
+    spec:
+      containers:
+        - name: crypto-app
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+            - name: ENVIRONMENT
+              value: "{{ .Values.environment }}"
+          ports:
+            - containerPort: 8000
+      nodeSelector:
+        environment: {{ .Values.environment }}
+      tolerations:
+        - key: "environment"
+          operator: "Equal"
+          value: "{{ .Values.environment }}"
+          effect: "NoSchedule"

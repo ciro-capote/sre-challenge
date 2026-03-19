@@ -1,0 +1,4 @@
+apiVersion: v2
+name: crypto-app
+description: API de Cripto (Desafio SRE)
+version: 0.1.0

@@ -1,0 +1,6 @@
+replicaCount: 1
+image:
+  repository: crypto-app
+  tag: "local"
+  pullPolicy: IfNotPresent
+environment: "staging"
