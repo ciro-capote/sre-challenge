@@ -8,4 +8,5 @@ spec:
     - port: 80
       targetPort: 8000
   selector:
-    app: crypto-app
+    app: crypto-api # <--- ALTERADO DE crypto-app PARA crypto-api
+ #O selector deve bater exatamente com o que esta no Deployment (crypto-api):    
