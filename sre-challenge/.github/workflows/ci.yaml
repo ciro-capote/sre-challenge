@@ -9,4 +9,4 @@ jobs:
       - uses: actions/checkout@v4
       - name: Build Docker Image
         run: docker build -t cirocapote/crypto-app:${{ github.sha }} ./app
-      # SRE Note: Em um ambiente real, adicionariamos o login no DockerHub e o comando 'docker push'
+      # ambiente real, adicionariamos o login no DockerHub e o comando 'docker push'
